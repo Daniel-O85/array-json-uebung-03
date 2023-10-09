@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=#, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-------------
+    Div für die ausgabe von 
+    Javascript in Html
+    -------------->
+    <div id="inhalt"></div>
+
+    <!---------
+        JavaScript... Start
+        --------->
+    <script>
+      /*********************************
+       * Konstanter Array beinhaltet Namen
+       ***********************************/
+      const Personen = [
+        "Hans",
+        "Peter",
+        "Mahmud",
+        "Osman",
+        "Jacky",
+        "Polat",
+        "Hakan",
+        "Tanja",
+      ];
+
+      /*********************************
+       * Konstantes Objekt mit Einträgen
+       * für eine Einkaufsliste
+       ***********************************/
+      const Einfaufsliste = {
+        Abteilung: "Süßwaren",
+        Produkt: "Milka Schokolade",
+      };
+
+      /********************************************
+       * HTML Verbindung für die Konstante Personen
+       *********************************************/
+      const verbindung_pers = document.getElementById("inhalt");
+
+      /**************************************************
+       * Funktion Zeigt den inhalt des Array Personen an
+       **************************************************/
+      function PersonenAnzeigen(Personen) {
+        verbindung_pers.innerHTML += "<div> Name: " + Personen + "</div>";
+      }
+      /*****************************************************
+       * for Schleife für den Inhalt aus dem Array Personen
+       *****************************************************/
+      for (let x = 0; x < Personen.length; x++)
+        /***********************
+         * Funktion aufrufen
+         ***********************/
+        PersonenAnzeigen(Personen[x]);
+
+      /********************************************
+       * HTML Verbindung für die Konstante Einkaufsliste
+       *********************************************/
+      const verbindung_liste = document.getElementById("inhalt");
+
+      /**************************************************
+       * Funktion Zeigt den inhalt des
+       * Objekts Einkaufsliste an
+       **************************************************/
+      function EinkaufsBummel(Einkaufsliste) {
+        verbindung_liste.innerHTML +=
+          "<p>" +
+          Einkaufsliste.Abteilung +
+          " = " +
+          Einkaufsliste.Produkt +
+          "</p>";
+      }
+
+      /***********************
+       * Funktion aufrufen
+       ***********************/
+      EinkaufsBummel(Einfaufsliste);
+    </script>
+
+    <!---------
+        JavaScript... Ende
+        --------->
+  </body>
+</html>
